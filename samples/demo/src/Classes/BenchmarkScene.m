@@ -22,7 +22,7 @@
 {
     SPButton *_startButton;
     SPTextField *_resultText;
-    SPTexture *_texture;
+    NSMutableArray *_textures;
     
     SPSprite *_container;
     int _frameCount;
@@ -36,7 +36,25 @@
 {
     if ((self = [super init]))
     {
-        _texture = [[SPTexture alloc] initWithContentsOfFile:@"benchmark_object.png"];
+        _textures = [[NSMutableArray alloc] init];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object2.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object3.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object4.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object5.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object6.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object7.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object8.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object9.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object10.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object11.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object12.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object13.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object14.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object15.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object16.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object17.png"]];
+        [_textures addObject:[[SPTexture alloc] initWithContentsOfFile:@"benchmark_object18.png"]];
         
         // the container will hold all test objects
         _container = [[SPSprite alloc] init];
@@ -145,7 +163,7 @@
     
     for (int i=0; i<numObjects; ++i)
     {   
-        SPImage *egg = [[SPImage alloc] initWithTexture:_texture];
+        SPImage *egg = [[SPImage alloc] initWithTexture:[_textures objectAtIndex:rand()%[_textures count]]];
         egg.x = [SPUtils randomIntBetweenMin:border andMax:GAME_WIDTH  - border];
         egg.y = [SPUtils randomIntBetweenMin:border andMax:GAME_HEIGHT - border];
         [_container addChild:egg];
