@@ -24,7 +24,25 @@
 {
     if ((self = [super init]))
     {
-        mTexture = [[SPTexture alloc] initWithContentsOfFile:@"benchmark_object.png"];
+        mTextures = [[NSMutableArray alloc] init];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object2.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object3.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object4.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object5.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object6.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object7.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object8.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object9.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object10.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object11.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object12.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object13.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object14.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object15.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object16.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object17.png"]];
+        [mTextures addObject:[SPTexture textureWithContentsOfFile:@"benchmark_object18.png"]];
         
         // the container will hold all test objects
         mContainer = [[SPSprite alloc] init];
@@ -133,7 +151,7 @@
     
     for (int i=0; i<numObjects; ++i)
     {   
-        SPImage *egg = [[SPImage alloc] initWithTexture:mTexture];
+        SPImage *egg = [[SPImage alloc] initWithTexture:[mTextures objectAtIndex:rand()%[mTextures count]]];
         egg.x = [SPUtils randomIntBetweenMin:border andMax:GAME_WIDTH  - border];
         egg.y = [SPUtils randomIntBetweenMin:border andMax:GAME_HEIGHT - border];
         [mContainer addChild:egg];
@@ -146,7 +164,7 @@
     [self removeEventListenersAtObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
     [mStartButton removeEventListenersAtObject:self forType:SP_EVENT_TYPE_TRIGGERED];
 
-    [mTexture release];
+    [mTextures release];
     [super dealloc];
 }
 

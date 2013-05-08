@@ -13,7 +13,7 @@
 {
     SPButton *mStartButton;
     SPTextField *mResultText;
-    SPTexture *mTexture;
+    NSMutableArray *mTextures;
 
     SPSprite *mContainer;
     int mFrameCount;
