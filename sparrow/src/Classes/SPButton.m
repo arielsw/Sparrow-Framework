@@ -17,6 +17,7 @@
 #import "SPStage.h"
 #import "SPSprite.h"
 #import "SPTextField.h"
+#import "ISPButtonTexture.h"
 
 // --- private interface ---------------------------------------------------------------------------
 
@@ -32,8 +33,8 @@
 
 @implementation SPButton
 {
-    SPTexture *_upState;
-    SPTexture *_downState;
+    id<ISPButtonTexture> _upState;
+    id<ISPButtonTexture> _downState;
     
     SPSprite *_contents;
     SPImage *_background;
@@ -55,7 +56,7 @@
 
 #define MAX_DRAG_DIST 40
 
-- (id)initWithUpState:(SPTexture*)upState downState:(SPTexture*)downState
+- (id)initWithUpState:(id<ISPButtonTexture>)upState downState:(id<ISPButtonTexture>)downState
 {
     if ((self = [super init]))
     {
@@ -77,14 +78,14 @@
     return self;
 }
 
-- (id)initWithUpState:(SPTexture*)upState text:(NSString*)text
+- (id)initWithUpState:(id<ISPButtonTexture>)upState text:(NSString*)text
 {
     self = [self initWithUpState:upState];
     self.text = text;
     return self;
 }
 
-- (id)initWithUpState:(SPTexture*)upState
+- (id)initWithUpState:(id<ISPButtonTexture>)upState
 {
     self = [self initWithUpState:upState downState:upState];
     _scaleWhenDown = 0.9f;
@@ -155,7 +156,7 @@
     }    
 }
 
-- (void)setUpState:(SPTexture*)upState
+- (void)setUpState:(id<ISPButtonTexture>)upState
 {
     if (upState != _upState)
     {    
@@ -164,7 +165,7 @@
     }
 }
 
-- (void)setDownState:(SPTexture*)downState
+- (void)setDownState:(id<ISPButtonTexture>)downState
 {
     if (downState != _downState)
     {    
@@ -291,17 +292,17 @@
     return _background.height;
 }
  
-+ (id)buttonWithUpState:(SPTexture*)upState downState:(SPTexture*)downState
++ (id)buttonWithUpState:(id<ISPButtonTexture>)upState downState:(id<ISPButtonTexture>)downState
 {
     return [[self alloc] initWithUpState:upState downState:downState];
 }
 
-+ (id)buttonWithUpState:(SPTexture*)upState text:(NSString*)text
++ (id)buttonWithUpState:(id<ISPButtonTexture>)upState text:(NSString*)text
 {
     return [[self alloc] initWithUpState:upState text:text];
 }
 
-+ (id)buttonWithUpState:(SPTexture*)upState
++ (id)buttonWithUpState:(id<ISPButtonTexture>)upState
 {
     return [[self alloc] initWithUpState:upState];
 }

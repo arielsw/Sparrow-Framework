@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISPImageTexture.h"
 
-@protocol ISPButtonTexture <NSObject>
+@protocol ISPButtonTexture <NSObject, ISPImageTexture>
 
 @end

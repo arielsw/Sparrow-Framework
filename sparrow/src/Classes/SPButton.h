@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SPDisplayObjectContainer.h"
-
+@protocol ISPButtonTexture;
 @class SPTexture;
 @class SPImage;
 @class SPTextField;
@@ -41,22 +41,22 @@
 /// ------------------
 
 /// Initializes a button with textures for up- and down-state. _Designated Initializer_.
-- (id)initWithUpState:(SPTexture*)upState downState:(SPTexture*)downState;
+- (id)initWithUpState:(id<ISPButtonTexture>)upState downState:(id<ISPButtonTexture>)downState;
 
 /// Initializes a button with an up state texture and text.
-- (id)initWithUpState:(SPTexture*)upState text:(NSString*)text;
+- (id)initWithUpState:(id<ISPButtonTexture>)upState text:(NSString*)text;
 
 /// Initializes a button only with an up state.
-- (id)initWithUpState:(SPTexture*)upState;
+- (id)initWithUpState:(id<ISPButtonTexture>)upState;
 
 /// Factory method.
-+ (id)buttonWithUpState:(SPTexture*)upState downState:(SPTexture*)downState;
++ (id)buttonWithUpState:(id<ISPButtonTexture>)upState downState:(id<ISPButtonTexture>)downState;
 
 /// Factory method.
-+ (id)buttonWithUpState:(SPTexture*)upState text:(NSString*)text;
++ (id)buttonWithUpState:(id<ISPButtonTexture>)upState text:(NSString*)text;
 
 /// Factory method.
-+ (id)buttonWithUpState:(SPTexture*)upState;
++ (id)buttonWithUpState:(id<ISPButtonTexture>)upState;
 
 /// ----------------
 /// @name Properties
@@ -84,10 +84,10 @@
 @property (nonatomic, assign) uint fontColor;
 
 /// The texture that is displayed when the button is not being touched.
-@property (nonatomic, strong) SPTexture *upState;
+@property (nonatomic, strong) id<ISPButtonTexture> upState;
 
 /// The texture that is displayed while the button is touched.
-@property (nonatomic, strong) SPTexture *downState;
+@property (nonatomic, strong) id<ISPButtonTexture> downState;
 
 /// The bounds of the textfield on the button. Allows moving the text to a custom position.
 @property (nonatomic, copy)   SPRectangle *textBounds;
