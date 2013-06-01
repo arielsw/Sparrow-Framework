@@ -182,6 +182,7 @@
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B0CC375A17599B66007235FE /* ISPBaseEffectTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPBaseEffectTexture.h; sourceTree = "<group>"; };
 		B0CC375B1759A9FC007235FE /* ISPQuadBatchTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPQuadBatchTexture.h; sourceTree = "<group>"; };
+		B0CC375C1759AB2E007235FE /* TSPTextureSmoothing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSPTextureSmoothing.h; sourceTree = "<group>"; };
 		DE0456E413882A27005FFBCE /* SPButtonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPButtonTest.m; sourceTree = "<group>"; };
 		DE05748611E915A900F3A8A4 /* SPNSExtensionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNSExtensionsTest.m; sourceTree = "<group>"; };
 		DE08535C0FEC21F500DAF53C /* SPImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImage.h; sourceTree = "<group>"; };
@@ -645,6 +646,7 @@
 			children = (
 				DE0853F80FEC2CFF00DAF53C /* SPTexture.h */,
 				DE0853F90FEC2CFF00DAF53C /* SPTexture.m */,
+				B0CC375C1759AB2E007235FE /* TSPTextureSmoothing.h */,
 				DECF84310FF649D50026A4ED /* SPGLTexture.h */,
 				DECF84320FF649D50026A4ED /* SPGLTexture.m */,
 				DECF84B90FF681BA0026A4ED /* SPSubTexture.h */,
