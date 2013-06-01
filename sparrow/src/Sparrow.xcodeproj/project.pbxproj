@@ -180,6 +180,7 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B0CC375A17599B66007235FE /* ISPBaseEffectTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPBaseEffectTexture.h; sourceTree = "<group>"; };
 		DE0456E413882A27005FFBCE /* SPButtonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPButtonTest.m; sourceTree = "<group>"; };
 		DE05748611E915A900F3A8A4 /* SPNSExtensionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNSExtensionsTest.m; sourceTree = "<group>"; };
 		DE08535C0FEC21F500DAF53C /* SPImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImage.h; sourceTree = "<group>"; };
@@ -464,6 +465,7 @@
 				DE97B92F16F1EA5E00DC1077 /* SPProgram.m */,
 				DE82240A16EF468E00A172EE /* SPBaseEffect.h */,
 				DE82240B16EF468E00A172EE /* SPBaseEffect.m */,
+				B0CC375A17599B66007235FE /* ISPBaseEffectTexture.h */,
 				DE20D9C910713B0C006658C9 /* SPRenderSupport.h */,
 				DE20D9CA10713B0C006658C9 /* SPRenderSupport.m */,
 			);
