@@ -15,6 +15,7 @@
 #import "SPProgram.h"
 #import "SPNSExtensions.h"
 #import "SparrowClass.h"
+#import "ISPBaseEffectTexture.h"
 
 NSString *getProgramName(BOOL hasTexture, BOOL useTinting)
 {
@@ -33,7 +34,7 @@ NSString *getProgramName(BOOL hasTexture, BOOL useTinting)
 @implementation SPBaseEffect
 {
     SPMatrix  *_mvpMatrix;
-    SPTexture *_texture;
+    id<ISPBaseEffectTexture> _texture;
     float _alpha;
     BOOL _useTinting;
     BOOL _premultipliedAlpha;
@@ -109,7 +110,7 @@ NSString *getProgramName(BOOL hasTexture, BOOL useTinting)
     }
 }
 
-- (NSString *)vertexShaderForTexture:(SPTexture *)texture useTinting:(BOOL)useTinting
+- (NSString *)vertexShaderForTexture:(id<ISPBaseEffectTexture>)texture useTinting:(BOOL)useTinting
 {
     BOOL hasTexture = texture != nil;
     NSMutableString *source = [NSMutableString string];
@@ -139,7 +140,7 @@ NSString *getProgramName(BOOL hasTexture, BOOL useTinting)
     return source;
 }
 
-- (NSString *)fragmentShaderForTexture:(SPTexture *)texture useTinting:(BOOL)useTinting
+- (NSString *)fragmentShaderForTexture:(id<ISPBaseEffectTexture>)texture useTinting:(BOOL)useTinting
 {
     BOOL hasTexture = texture != nil;
     NSMutableString *source = [NSMutableString string];
@@ -196,7 +197,7 @@ NSString *getProgramName(BOOL hasTexture, BOOL useTinting)
     }
 }
 
-- (void)setTexture:(SPTexture *)value
+- (void)setTexture:(id<ISPBaseEffectTexture>)value
 {
     if ((_texture && !value) || (!_texture && value))
         _program = nil;

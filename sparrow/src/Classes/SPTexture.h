@@ -12,7 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-
+#import "ISPBaseEffectTexture.h"
 @class SPRectangle;
 @class SPTexture;
 @class SPVertexData;
@@ -94,7 +94,7 @@ typedef void (^SPTextureLoadingBlock)(SPTexture *texture, NSError *outError);
  
 ------------------------------------------------------------------------------------------------- */
 
-@interface SPTexture : NSObject
+@interface SPTexture : NSObject <ISPBaseEffectTexture>
 
 /// ------------------
 /// @name Initializers

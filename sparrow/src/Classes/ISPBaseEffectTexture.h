@@ -10,4 +10,6 @@
 
 @protocol ISPBaseEffectTexture <NSObject>
 
+@property (nonatomic, readonly) uint name;
+
 @end
