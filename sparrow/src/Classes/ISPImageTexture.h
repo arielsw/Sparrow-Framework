@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISPQuadTexture.h"
 
-@protocol ISPImageTexture <NSObject>
+@class SPVertexData;
+@class SPRectangle;
+
+@protocol ISPImageTexture <NSObject, ISPQuadTexture>
+
+@property (nonatomic, readonly) SPRectangle *frame;
+@property (nonatomic, readonly) float width;
+@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) BOOL premultipliedAlpha;
+
+- (void)adjustVertexData:(SPVertexData *)vertexData atIndex:(int)index numVertices:(int)count;
 
 @end

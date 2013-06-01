@@ -16,6 +16,7 @@
 #import "SPRenderSupport.h"
 #import "SPMacros.h"
 #import "SPVertexData.h"
+#import "ISPImageTexture.h"
 
 @implementation SPImage
 {
@@ -25,7 +26,7 @@
 
 @synthesize texture = _texture;
 
-- (id)initWithTexture:(SPTexture*)texture
+- (id)initWithTexture:(id<ISPImageTexture>)texture
 {
     if (!texture) [NSException raise:SP_EXC_INVALID_OPERATION format:@"texture cannot be nil!"];
     
@@ -111,7 +112,7 @@
     [_vertexDataCache copyToVertexData:targetData atIndex:targetIndex numVertices:4];
 }
 
-- (void)setTexture:(SPTexture *)value
+- (void)setTexture:(id<ISPImageTexture>)value
 {
     if (value == nil)
     {
@@ -126,7 +127,7 @@
     }
 }
 
-+ (id)imageWithTexture:(SPTexture*)texture
++ (id)imageWithTexture:(id<ISPImageTexture>)texture
 {
     return [[self alloc] initWithTexture:texture];
 }

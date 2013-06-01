@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import "SPQuad.h"
 
+@protocol ISPImageTexture;
 @class SPTexture;
 @class SPPoint;
 
@@ -34,7 +35,7 @@
 
 @interface SPImage : SPQuad 
 {
-    SPTexture *_texture;
+    id<ISPImageTexture> _texture;
 }
 
 /// --------------------
@@ -42,7 +43,7 @@
 /// --------------------
 
 /// Initialize a quad with a texture mapped onto it. _Designated Initializer_.
-- (id)initWithTexture:(SPTexture*)texture;
+- (id)initWithTexture:(id<ISPImageTexture>)texture;
 
 /// Initialize a quad with a texture loaded from a file. No mipmaps will be created.
 - (id)initWithContentsOfFile:(NSString*)path;
@@ -51,7 +52,7 @@
 - (id)initWithContentsOfFile:(NSString *)path generateMipmaps:(BOOL)mipmaps;
 
 /// Factory method.
-+ (id)imageWithTexture:(SPTexture*)texture;
++ (id)imageWithTexture:(id<ISPImageTexture>)texture;
 
 /// Factory method.
 + (id)imageWithContentsOfFile:(NSString*)path;
@@ -78,6 +79,6 @@
 /// ----------------
 
 /// The texture that is displayed on the quad.
-@property (nonatomic, strong) SPTexture *texture;
+@property (nonatomic, strong) id<ISPImageTexture> texture;
 
 @end

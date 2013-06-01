@@ -15,6 +15,7 @@
 #import "ISPBaseEffectTexture.h"
 #import "ISPQuadBatchTexture.h"
 #import "ISPQuadTexture.h"
+#import "ISPImageTexture.h"
 @class SPRectangle;
 @class SPTexture;
 @class SPVertexData;
@@ -91,7 +92,7 @@ typedef void (^SPTextureLoadingBlock)(SPTexture *texture, NSError *outError);
  
 ------------------------------------------------------------------------------------------------- */
 
-@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture, ISPQuadTexture>
+@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture, ISPQuadTexture, ISPImageTexture>
 
 /// ------------------
 /// @name Initializers
