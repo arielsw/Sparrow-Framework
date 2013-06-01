@@ -184,6 +184,7 @@
 		B0CC375B1759A9FC007235FE /* ISPQuadBatchTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPQuadBatchTexture.h; sourceTree = "<group>"; };
 		B0CC375C1759AB2E007235FE /* TSPTextureSmoothing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSPTextureSmoothing.h; sourceTree = "<group>"; };
 		B0CC375D1759AD62007235FE /* ISPQuadTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPQuadTexture.h; sourceTree = "<group>"; };
+		B0CC375E1759B585007235FE /* ISPImageTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPImageTexture.h; sourceTree = "<group>"; };
 		DE0456E413882A27005FFBCE /* SPButtonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPButtonTest.m; sourceTree = "<group>"; };
 		DE05748611E915A900F3A8A4 /* SPNSExtensionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNSExtensionsTest.m; sourceTree = "<group>"; };
 		DE08535C0FEC21F500DAF53C /* SPImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImage.h; sourceTree = "<group>"; };
@@ -548,6 +549,7 @@
 				DE2ED8090F6D53020012B6BA /* SPDisplayObjectContainer.m */,
 				DE08535C0FEC21F500DAF53C /* SPImage.h */,
 				DE08535D0FEC21F500DAF53C /* SPImage.m */,
+				B0CC375E1759B585007235FE /* ISPImageTexture.h */,
 				DEE94E8011B43DE60000FE20 /* SPMovieClip.h */,
 				DEE94E8111B43DE60000FE20 /* SPMovieClip.m */,
 				DE2ED8550F6D54900012B6BA /* SPQuad.h */,
