@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISPImageTexture.h"
 
-@protocol ISPMovieClipTexture <NSObject>
+@protocol ISPMovieClipTexture <NSObject, ISPImageTexture>
 
 @end

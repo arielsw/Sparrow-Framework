@@ -11,6 +11,7 @@
 
 #import "SPMovieClip.h"
 #import "SPMacros.h"
+#import "ISPMovieClipTexture.h"
 
 // --- class implementation ------------------------------------------------------------------------
 
@@ -34,7 +35,7 @@
 @synthesize totalTime = _totalTime;
 @synthesize currentTime = _currentTime;
 
-- (id)initWithFrame:(SPTexture *)texture fps:(float)fps
+- (id)initWithFrame:(id<ISPMovieClipTexture>)texture fps:(float)fps
 {
     if ((self = [super initWithTexture:texture]))
     {
@@ -66,37 +67,37 @@
     return self;
 }
 
-- (id)initWithTexture:(SPTexture *)texture
+- (id)initWithTexture:(id<ISPMovieClipTexture>)texture
 {
     return [self initWithFrame:texture fps:10];
 }
 
-- (void)addFrameWithTexture:(SPTexture *)texture
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture
 {
     [self addFrameWithTexture:texture atIndex:self.numFrames];
 }
 
-- (void)addFrameWithTexture:(SPTexture *)texture duration:(double)duration
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture duration:(double)duration
 {
     [self addFrameWithTexture:texture duration:duration atIndex:self.numFrames];
 }
 
-- (void)addFrameWithTexture:(SPTexture *)texture duration:(double)duration sound:(SPSoundChannel *)sound
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture duration:(double)duration sound:(SPSoundChannel *)sound
 {
     [self addFrameWithTexture:texture duration:duration sound:sound atIndex:self.numFrames];
 }
 
-- (void)addFrameWithTexture:(SPTexture *)texture atIndex:(int)frameID
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture atIndex:(int)frameID
 {
     [self addFrameWithTexture:texture duration:_defaultFrameDuration atIndex:frameID];
 }
 
-- (void)addFrameWithTexture:(SPTexture *)texture duration:(double)duration atIndex:(int)frameID
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture duration:(double)duration atIndex:(int)frameID
 {
     [self addFrameWithTexture:texture duration:duration sound:nil atIndex:frameID];
 }
 
-- (void)addFrameWithTexture:(SPTexture *)texture duration:(double)duration
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture duration:(double)duration
                       sound:(SPSoundChannel *)sound atIndex:(int)frameID
 {
     _totalTime += duration;
@@ -113,7 +114,7 @@
     [_sounds removeObjectAtIndex:frameID];
 }
 
-- (void)setTexture:(SPTexture *)texture atIndex:(int)frameID
+- (void)setTexture:(id<ISPMovieClipTexture>)texture atIndex:(int)frameID
 {
     _textures[frameID] = texture;
 }
@@ -130,7 +131,7 @@
     _totalTime += duration;
 }
 
-- (SPTexture *)textureAtIndex:(int)frameID
+- (id<ISPMovieClipTexture>)textureAtIndex:(int)frameID
 {
     return _textures[frameID];    
 }
@@ -220,7 +221,7 @@
     return !_loop && _currentTime >= _totalTime;
 }
 
-+ (id)movieWithFrame:(SPTexture *)texture fps:(float)fps
++ (id)movieWithFrame:(id<ISPMovieClipTexture>)texture fps:(float)fps
 {
     return [[self alloc] initWithFrame:texture fps:fps];
 }

@@ -15,6 +15,7 @@
 #import "SPAnimatable.h"
 #import "SPImage.h"
 #import "SPSoundChannel.h"
+@protocol ISPMovieClipTexture;
 
 /** ------------------------------------------------------------------------------------------------
 
@@ -41,14 +42,16 @@
 /// @name Initializers
 /// ------------------
 
+- (id)initWithTexture:(id<ISPMovieClipTexture>)texture;
+
 /// Initializes a movie with the first frame and the default number of frames per second. _Designated initializer_.
-- (id)initWithFrame:(SPTexture *)texture fps:(float)fps;
+- (id)initWithFrame:(id<ISPMovieClipTexture>)texture fps:(float)fps;
 
 /// Initializes a movie with an array of textures and the default number of frames per second.
 - (id)initWithFrames:(NSArray *)textures fps:(float)fps;
 
 /// Factory method.
-+ (id)movieWithFrame:(SPTexture *)texture fps:(float)fps;
++ (id)movieWithFrame:(id<ISPMovieClipTexture>)texture fps:(float)fps;
 
 /// Factory method.
 + (id)movieWithFrames:(NSArray *)textures fps:(float)fps;
@@ -58,29 +61,29 @@
 /// --------------------------------
 
 /// Adds a frame with a certain texture, using the default duration.
-- (void)addFrameWithTexture:(SPTexture *)texture;
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture;
 
 /// Adds a frame with a certain texture and duration.
-- (void)addFrameWithTexture:(SPTexture *)texture duration:(double)duration;
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture duration:(double)duration;
 
 /// Adds a frame with a certain texture, duration and sound.
-- (void)addFrameWithTexture:(SPTexture *)texture duration:(double)duration sound:(SPSoundChannel *)sound;
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture duration:(double)duration sound:(SPSoundChannel *)sound;
 
 /// Inserts a frame at the specified index. The successors will move down.
-- (void)addFrameWithTexture:(SPTexture *)texture atIndex:(int)frameID;
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture atIndex:(int)frameID;
 
 /// Adds a frame with a certain texture and duration.
-- (void)addFrameWithTexture:(SPTexture *)texture duration:(double)duration atIndex:(int)frameID;
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture duration:(double)duration atIndex:(int)frameID;
 
 /// Adds a frame with a certain texture, duration and sound.
-- (void)addFrameWithTexture:(SPTexture *)texture duration:(double)duration
+- (void)addFrameWithTexture:(id<ISPMovieClipTexture>)texture duration:(double)duration
                      sound:(SPSoundChannel *)sound atIndex:(int)frameID;
 
 /// Removes the frame at the specified index. The successors will move up.
 - (void)removeFrameAtIndex:(int)frameID;
 
 /// Sets the texture of a certain frame.
-- (void)setTexture:(SPTexture *)texture atIndex:(int)frameID;
+- (void)setTexture:(id<ISPMovieClipTexture>)texture atIndex:(int)frameID;
 
 /// Sets the sound that will be played back when a certain frame is active.
 - (void)setSound:(SPSoundChannel *)sound atIndex:(int)frameID;
@@ -89,7 +92,7 @@
 - (void)setDuration:(double)duration atIndex:(int)frameID;
 
 /// Returns the texture of a frame at a certain index.
-- (SPTexture *)textureAtIndex:(int)frameID;
+- (id<ISPMovieClipTexture>)textureAtIndex:(int)frameID;
 
 /// Returns the sound of a frame at a certain index.
 - (SPSoundChannel *)soundAtIndex:(int)frameID;
