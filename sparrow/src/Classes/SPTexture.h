@@ -17,12 +17,7 @@
 @class SPTexture;
 @class SPVertexData;
 
-typedef enum 
-{
-    SPTextureSmoothingNone,
-    SPTextureSmoothingBilinear,
-    SPTextureSmoothingTrilinear
-} SPTextureSmoothing;
+#import "TSPTextureSmoothing.h"
 
 typedef void (^SPTextureDrawingBlock)(CGContextRef context);
 typedef void (^SPTextureLoadingBlock)(SPTexture *texture, NSError *outError);

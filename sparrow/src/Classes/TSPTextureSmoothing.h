@@ -6,3 +6,9 @@
 //
 //
 
+typedef enum
+{
+    SPTextureSmoothingNone,
+    SPTextureSmoothingBilinear,
+    SPTextureSmoothingTrilinear
+} SPTextureSmoothing;
