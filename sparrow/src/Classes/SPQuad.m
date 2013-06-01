@@ -169,7 +169,7 @@
     return _tinted;
 }
 
-- (SPTexture *)texture
+- (id<ISPQuadTexture>)texture
 {
     return nil;
 }

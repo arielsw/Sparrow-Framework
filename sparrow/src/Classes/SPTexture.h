@@ -14,6 +14,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ISPBaseEffectTexture.h"
 #import "ISPQuadBatchTexture.h"
+#import "ISPQuadTexture.h"
 @class SPRectangle;
 @class SPTexture;
 @class SPVertexData;
@@ -90,7 +91,7 @@ typedef void (^SPTextureLoadingBlock)(SPTexture *texture, NSError *outError);
  
 ------------------------------------------------------------------------------------------------- */
 
-@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture>
+@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture, ISPQuadTexture>
 
 /// ------------------
 /// @name Initializers

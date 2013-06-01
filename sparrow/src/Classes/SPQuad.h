@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import "SPDisplayObject.h"
 
+@protocol ISPQuadTexture;
 @class SPVertexData;
 @class SPTexture;
 
@@ -122,6 +123,6 @@
 @property (nonatomic, readonly) BOOL tinted;
 
 /// The texture that is displayed on the quad. For pure quads (no subclasses), this is always nil.
-@property (nonatomic, readonly) SPTexture *texture;
+@property (nonatomic, readonly) id<ISPQuadTexture> texture;
 
 @end

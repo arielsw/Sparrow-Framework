@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISPQuadBatchTexture.h"
 
-@protocol ISPQuadTexture <NSObject>
+@protocol ISPQuadTexture <NSObject, ISPQuadBatchTexture>
 
 @end
