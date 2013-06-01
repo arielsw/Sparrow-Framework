@@ -25,7 +25,7 @@
     int _numQuads;
     BOOL _syncRequired;
     
-    SPTexture *_texture;
+    id<ISPQuadBatchTexture> _texture;
     BOOL _premultipliedAlpha;
     BOOL _tinted;
     
@@ -237,7 +237,7 @@
     _numQuads += numQuads;
 }
 
-- (BOOL)isStateChangeWithTinted:(BOOL)tinted texture:(SPTexture *)texture alpha:(float)alpha
+- (BOOL)isStateChangeWithTinted:(BOOL)tinted texture:(id<ISPQuadBatchTexture>)texture alpha:(float)alpha
              premultipliedAlpha:(BOOL)pma blendMode:(uint)blendMode numQuads:(int)numQuads
 {
     if (_numQuads == 0) return NO;
@@ -386,7 +386,7 @@
     }
     else if (quad || batch)
     {
-        SPTexture *texture = [(id)object texture];
+        id<ISPQuadBatchTexture> texture = [(id)object texture];
         BOOL tinted = [(id)object tinted];
         BOOL pma = [(id)object premultipliedAlpha];
         int numQuads = batch ? batch.numQuads : 1;

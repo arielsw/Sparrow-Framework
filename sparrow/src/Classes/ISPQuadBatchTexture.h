@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISPBaseEffectTexture.h"
+#import "TSPTextureSmoothing.h"
 
-@protocol ISPQuadBatchTexture <NSObject>
+@protocol ISPQuadBatchTexture <NSObject, ISPBaseEffectTexture>
+
+@property (nonatomic, readonly) BOOL repeat;
+@property (nonatomic, readonly) SPTextureSmoothing smoothing;
 
 @end

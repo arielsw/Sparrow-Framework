@@ -15,6 +15,7 @@
 @class SPImage;
 @class SPQuad;
 @class SPTexture;
+@protocol ISPQuadBatchTexture;
 
 /** ------------------------------------------------------------------------------------------------
  
@@ -88,7 +89,7 @@
 /// Indicates if specific quads can be added to the batch without causing a state change.
 /// A state change occurs if the quad uses a different base texture, has a different `smoothing`,
 /// `repeat` or 'tinted' setting, or if the batch is full (one batch can contain up to 8192 quads).
-- (BOOL)isStateChangeWithTinted:(BOOL)tinted texture:(SPTexture *)texture alpha:(float)alpha
+- (BOOL)isStateChangeWithTinted:(BOOL)tinted texture:(id<ISPQuadBatchTexture>)texture alpha:(float)alpha
              premultipliedAlpha:(BOOL)pma blendMode:(uint)blendMode numQuads:(int)numQuads;
 
 /// Renders the batch with custom alpha and blend mode values, as well as a custom mvp matrix.
@@ -116,7 +117,7 @@
 @property (nonatomic, readonly) BOOL tinted;
 
 /// The current texture of the batch, if there is one.
-@property (nonatomic, readonly) SPTexture *texture;
+@property (nonatomic, readonly) id<ISPQuadBatchTexture> texture;
 
 /// Indicates if the rgb values are stored premultiplied with the alpha value.
 @property (nonatomic, readonly) BOOL premultipliedAlpha;
