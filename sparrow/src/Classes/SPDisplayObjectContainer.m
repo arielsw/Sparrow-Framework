@@ -39,6 +39,8 @@ static void getChildEventListeners(SPDisplayObject *object, NSString *eventType,
     NSMutableArray *_children;
 }
 
+@synthesize children = _children;
+
 - (id)init
 {    
     #if DEBUG    

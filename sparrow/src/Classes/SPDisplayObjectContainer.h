@@ -111,5 +111,6 @@
 /// The number of children of this container.
 @property (nonatomic, readonly) int numChildren;
 
+@property (nonatomic, readonly) NSArray *children;
 
 @end
