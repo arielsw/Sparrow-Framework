@@ -272,6 +272,11 @@ static void getChildEventListeners(SPDisplayObject *object, NSString *eventType,
 
 #pragma mark NSFastEnumeration
 
+- (id<NSFastEnumeration>)children
+{
+    return self;
+}
+
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
                                   objects:(id __unsafe_unretained *)stackbuf
                                     count:(NSUInteger)len
