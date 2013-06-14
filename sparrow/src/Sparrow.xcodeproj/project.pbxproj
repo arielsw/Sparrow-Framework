@@ -181,6 +181,7 @@
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B027CB581759C34800A45E50 /* ISPButtonTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPButtonTexture.h; sourceTree = "<group>"; };
+		B0C176E6176BDA7B00EF456E /* ISPBitmapFontTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPBitmapFontTexture.h; sourceTree = "<group>"; };
 		B0CC375A17599B66007235FE /* ISPBaseEffectTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPBaseEffectTexture.h; sourceTree = "<group>"; };
 		B0CC375B1759A9FC007235FE /* ISPQuadBatchTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPQuadBatchTexture.h; sourceTree = "<group>"; };
 		B0CC375C1759AB2E007235FE /* TSPTextureSmoothing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSPTextureSmoothing.h; sourceTree = "<group>"; };
@@ -611,6 +612,7 @@
 				DED4EFCA0FF9439D0093AD29 /* SPTextField.m */,
 				DEE09D78108364A900ECC896 /* SPBitmapFont.h */,
 				DEE09D79108364A900ECC896 /* SPBitmapFont.m */,
+				B0C176E6176BDA7B00EF456E /* ISPBitmapFontTexture.h */,
 				DEE09D7C108369AE00ECC896 /* SPBitmapChar.h */,
 				DEE09D7D108369AE00ECC896 /* SPBitmapChar.m */,
 			);
