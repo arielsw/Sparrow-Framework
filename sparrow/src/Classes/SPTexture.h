@@ -18,6 +18,8 @@
 #import "ISPImageTexture.h"
 #import "ISPMovieClipTexture.h"
 #import "ISPButtonTexture.h"
+#import "ISPBitmapFontTexture.h"
+
 @class SPRectangle;
 @class SPTexture;
 @class SPVertexData;
@@ -94,7 +96,7 @@ typedef void (^SPTextureLoadingBlock)(SPTexture *texture, NSError *outError);
  
 ------------------------------------------------------------------------------------------------- */
 
-@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture, ISPQuadTexture, ISPImageTexture, ISPMovieClipTexture, ISPButtonTexture>
+@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture, ISPQuadTexture, ISPImageTexture, ISPMovieClipTexture, ISPButtonTexture, ISPBitmapFontTexture>
 
 /// ------------------
 /// @name Initializers

@@ -23,6 +23,7 @@
 #import "SparrowClass.h"
 #import "SPNSExtensions.h"
 #import "SPQuadBatch.h"
+#import "ISPBitmapFontTexture.h"
 
 #define CHAR_SPACE           32
 #define CHAR_TAB              9
@@ -61,7 +62,7 @@ SP_IMPLEMENT_MEMORY_POOL();
 @implementation SPBitmapFont
 {
     NSString *_name;
-    SPTexture *_fontTexture;
+    id<ISPBitmapFontTexture> _fontTexture;
     NSMutableDictionary *_chars;
     float _size;
     float _lineHeight;
@@ -73,7 +74,7 @@ SP_IMPLEMENT_MEMORY_POOL();
 @synthesize lineHeight = _lineHeight;
 @synthesize size = _size;
 
-- (id)initWithContentsOfData:(NSData *)data texture:(SPTexture *)texture
+- (id)initWithContentsOfData:(NSData *)data texture:(id<ISPBitmapFontTexture>)texture
 {
     if ((self = [super init]))
     {
@@ -102,7 +103,7 @@ SP_IMPLEMENT_MEMORY_POOL();
     return [self initWithContentsOfData:data texture:nil];
 }
 
-- (id)initWithContentsOfFile:(NSString *)path texture:(SPTexture *)texture
+- (id)initWithContentsOfFile:(NSString *)path texture:(id<ISPBitmapFontTexture>)texture
 {
     NSString *absolutePath = [SPUtils absolutePathToFile:path];
     if (!absolutePath) [NSException raise:SP_EXC_FILE_NOT_FOUND format:@"file not found: %@", path];

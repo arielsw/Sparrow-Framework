@@ -15,6 +15,7 @@
 #import "SPMacros.h"
 #import "SPTexture.h"
 
+@protocol ISPBitmapFontTexture;
 @class SPSprite;
 @class SPQuadBatch;
 
@@ -55,13 +56,13 @@
 
 /// Initializes a bitmap font by parsing the XML data and using the specified texture.
 /// _Designated Initializer_.
-- (id)initWithContentsOfData:(NSData *)data texture:(SPTexture *)texture;
+- (id)initWithContentsOfData:(NSData *)data texture:(id<ISPBitmapFontTexture>)texture;
 
 /// Initializes a bitmap font by parsing the XML data and loading the texture that is specified there.
 - (id)initWithContentsOfData:(NSData *)data;
 
 /// Initializes a bitmap font by parsing an XML file and using the specified texture.
-- (id)initWithContentsOfFile:(NSString *)path texture:(SPTexture *)texture;
+- (id)initWithContentsOfFile:(NSString *)path texture:(id<ISPBitmapFontTexture>)texture;
 
 /// Initializes a bitmap font by parsing an XML file and loading the texture that is specified there.
 - (id)initWithContentsOfFile:(NSString *)path;

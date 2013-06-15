@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISPImageTexture.h"
 
-@protocol ISPBitmapFontTexture <NSObject>
+@protocol ISPBitmapFontTexture <NSObject, ISPImageTexture>
+
+@property (nonatomic, readonly) float scale;
+@property (nonatomic) SPTextureSmoothing smoothing;
 
 @end
