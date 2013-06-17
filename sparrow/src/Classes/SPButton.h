@@ -12,7 +12,6 @@
 #import <Foundation/Foundation.h>
 #import "SPDisplayObjectContainer.h"
 @protocol ISPButtonTexture;
-@class SPTexture;
 @class SPImage;
 @class SPTextField;
 @class SPSprite;

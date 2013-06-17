@@ -13,7 +13,6 @@
 
 #import "SPMatrix.h"
 
-@class SPTexture;
 @class SPDisplayObject;
 @class SPQuad;
 

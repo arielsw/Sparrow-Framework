@@ -14,7 +14,6 @@
 
 @class SPImage;
 @class SPQuad;
-@class SPTexture;
 @protocol ISPQuadBatchTexture;
 
 /** ------------------------------------------------------------------------------------------------

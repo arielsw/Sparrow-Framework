@@ -12,7 +12,6 @@
 #import <Foundation/Foundation.h>
 
 @class SPMatrix;
-@class SPTexture;
 @protocol ISPBaseEffectTexture;
 
 /** ------------------------------------------------------------------------------------------------

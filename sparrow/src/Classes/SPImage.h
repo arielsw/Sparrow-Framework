@@ -13,7 +13,6 @@
 #import "SPQuad.h"
 
 @protocol ISPImageTexture;
-@class SPTexture;
 @class SPPoint;
 
 /** ------------------------------------------------------------------------------------------------

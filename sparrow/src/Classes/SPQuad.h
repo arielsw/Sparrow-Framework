@@ -14,7 +14,6 @@
 
 @protocol ISPQuadTexture;
 @class SPVertexData;
-@class SPTexture;
 
 /** ------------------------------------------------------------------------------------------------
 
