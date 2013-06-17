@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISPImageTexture.h"
 
-@protocol ISPBitmapCharTexture <NSObject>
+@protocol ISPBitmapCharTexture <NSObject, ISPImageTexture>
 
 @end

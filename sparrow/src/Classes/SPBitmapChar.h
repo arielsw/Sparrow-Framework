@@ -12,6 +12,8 @@
 #import <Foundation/Foundation.h>
 #import "SPImage.h"
 
+@protocol ISPBitmapCharTexture;
+
 /** ------------------------------------------------------------------------------------------------
 
  A BitmapChar contains the information about one char of a bitmap font.
@@ -27,7 +29,7 @@
 /// ------------------
 
 /// Initializes a char with a texture and its properties.
-- (id)initWithID:(int)charID texture:(SPTexture *)texture
+- (id)initWithID:(int)charID texture:(id<ISPBitmapCharTexture>)texture
          xOffset:(float)xOffset yOffset:(float)yOffset xAdvance:(float)xAdvance;
 
 /// -------------
@@ -60,7 +62,7 @@
 @property (nonatomic, readonly) float xAdvance;
 
 /// The texture of the character.
-@property (nonatomic, readonly) SPTexture *texture;
+@property (nonatomic, readonly) id<ISPBitmapCharTexture> texture;
 
 /// The width of the character in points.
 @property (nonatomic, readonly) float width;

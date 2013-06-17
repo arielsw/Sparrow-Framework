@@ -11,10 +11,11 @@
 
 #import "SPBitmapChar.h"
 #import "SPTexture.h"
+#import "ISPBitmapCharTexture.h"
 
 @implementation SPBitmapChar
 {
-    SPTexture *_texture;
+    id<ISPBitmapCharTexture> _texture;
     int _charID;
     float _xOffset;
     float _yOffset;
@@ -28,7 +29,7 @@
 @synthesize xAdvance = _xAdvance;
 @synthesize texture = _texture;
 
-- (id)initWithID:(int)charID texture:(SPTexture *)texture
+- (id)initWithID:(int)charID texture:(id<ISPBitmapCharTexture>)texture
          xOffset:(float)xOffset yOffset:(float)yOffset xAdvance:(float)xAdvance;
 {
     if ((self = [super init]))
@@ -43,7 +44,7 @@
     return self;
 }
 
-- (id)initWithTexture:(SPTexture *)texture
+- (id)initWithTexture:(id<ISPBitmapCharTexture>)texture
 {
     return [self initWithID:0 texture:texture xOffset:0 yOffset:0 xAdvance:texture.width];
 }
