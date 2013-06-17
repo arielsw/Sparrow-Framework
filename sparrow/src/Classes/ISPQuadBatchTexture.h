@@ -12,7 +12,7 @@
 
 @protocol ISPQuadBatchTexture <NSObject, ISPBaseEffectTexture>
 
-@property (nonatomic, readonly) BOOL repeat;
-@property (nonatomic, readonly) SPTextureSmoothing smoothing;
+- (BOOL)repeat;
+- (SPTextureSmoothing)smoothing;
 
 @end

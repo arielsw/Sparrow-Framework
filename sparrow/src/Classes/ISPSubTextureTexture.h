@@ -11,12 +11,14 @@
 
 @protocol ISPSubTextureTexture <NSObject>
 
-@property (nonatomic, readonly) float width;
-@property (nonatomic, readonly) float height;
-@property (nonatomic, readonly) uint name;
-@property (nonatomic) BOOL repeat;
-@property (nonatomic) SPTextureSmoothing smoothing;
-@property (nonatomic, readonly) BOOL premultipliedAlpha;
-@property (nonatomic, readonly) float scale;
+- (float)width;
+- (float)height;
+- (uint)name;
+- (BOOL)repeat;
+- (void)setRepeat:(BOOL)repeat;
+- (SPTextureSmoothing)smoothing;
+- (void)setSmoothing:(SPTextureSmoothing)smoothing;
+- (BOOL)premultipliedAlpha;
+- (float)scale;
 
 @end

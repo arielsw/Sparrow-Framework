@@ -12,7 +12,8 @@
 
 @protocol ISPBitmapFontTexture <NSObject, ISPImageTexture, ISPSubTextureTexture>
 
-@property (nonatomic, readonly) float scale;
-@property (nonatomic) SPTextureSmoothing smoothing;
+- (float)scale;
+- (SPTextureSmoothing)smoothing;
+- (void)setSmoothing:(SPTextureSmoothing)smoothing;
 
 @end
