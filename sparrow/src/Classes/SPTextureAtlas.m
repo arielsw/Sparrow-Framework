@@ -12,12 +12,11 @@
 #import "SPTextureAtlas.h"
 #import "SPMacros.h"
 #import "SPTexture.h"
-#import "SPSubTexture.h"
-#import "SPGLTexture.h"
 #import "SPRectangle.h"
 #import "SPUtils.h"
 #import "SparrowClass.h"
 #import "SPNSExtensions.h"
+#import "ISPTextureAtlasTexture.h"
 
 // --- private interface ---------------------------------------------------------------------------
 
@@ -31,13 +30,13 @@
 
 @implementation SPTextureAtlas
 {
-    SPTexture *_atlasTexture;
+    id<ISPTextureAtlasTexture> _atlasTexture;
     NSString *_path;
     NSMutableDictionary *_textureRegions;
     NSMutableDictionary *_textureFrames;
 }
 
-- (id)initWithContentsOfFile:(NSString *)path texture:(SPTexture *)texture
+- (id)initWithContentsOfFile:(NSString *)path texture:(id<ISPTextureAtlasTexture>)texture
 {
     if ((self = [super init]))
     {
@@ -54,9 +53,9 @@
     return [self initWithContentsOfFile:path texture:nil];
 }
 
-- (id)initWithTexture:(SPTexture *)texture
+- (id)initWithTexture:(id<ISPTextureAtlasTexture>)texture
 {
-    return [self initWithContentsOfFile:nil texture:(SPTexture *)texture];
+    return [self initWithContentsOfFile:nil texture:texture];
 }
 
 - (id)init
@@ -118,7 +117,7 @@
     return [_textureRegions count];
 }
 
-- (SPTexture *)textureByName:(NSString *)name
+- (id<ISPTextureAtlasTexture>)textureByName:(NSString *)name
 {
     SPRectangle *frame  = _textureFrames[name];
     SPRectangle *region = _textureRegions[name];

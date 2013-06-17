@@ -21,6 +21,7 @@
 #import "ISPBitmapFontTexture.h"
 #import "ISPBitmapCharTexture.h"
 #import "ISPTextFieldTexture.h"
+#import "ISPTextureAtlasTexture.h"
 
 @class SPRectangle;
 @class SPTexture;
@@ -98,7 +99,7 @@ typedef void (^SPTextureLoadingBlock)(SPTexture *texture, NSError *outError);
  
 ------------------------------------------------------------------------------------------------- */
 
-@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture, ISPQuadTexture, ISPImageTexture, ISPMovieClipTexture, ISPButtonTexture, ISPBitmapFontTexture, ISPBitmapCharTexture, ISPTextFieldTexture>
+@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture, ISPQuadTexture, ISPImageTexture, ISPMovieClipTexture, ISPButtonTexture, ISPBitmapFontTexture, ISPBitmapCharTexture, ISPTextFieldTexture, ISPTextureAtlasTexture>
 
 /// ------------------
 /// @name Initializers

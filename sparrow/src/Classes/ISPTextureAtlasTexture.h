@@ -10,4 +10,6 @@
 
 @protocol ISPTextureAtlasTexture <NSObject>
 
+@property (nonatomic, readonly) float scale;
+
 @end

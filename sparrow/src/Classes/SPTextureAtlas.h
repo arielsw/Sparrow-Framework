@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class SPTexture;
+@protocol ISPTextureAtlasTexture;
 @class SPRectangle;
 
 /** ------------------------------------------------------------------------------------------------
@@ -62,13 +62,13 @@
 /// ------------------
 
 /// Initializes a texture atlas from an XML file and a custom texture. _Designated Initializer_.
-- (id)initWithContentsOfFile:(NSString *)path texture:(SPTexture *)texture;
+- (id)initWithContentsOfFile:(NSString *)path texture:(id<ISPTextureAtlasTexture>)texture;
 
 /// Initializes a texture atlas from an XML file, loading the texture that is specified in the XML.
 - (id)initWithContentsOfFile:(NSString *)path;
 
 /// Initializes a teture atlas from a texture. Add the regions manually with `addName:forRegion:`.
-- (id)initWithTexture:(SPTexture *)texture;
+- (id)initWithTexture:(id<ISPTextureAtlasTexture>)texture;
 
 /// Factory Method.
 + (id)atlasWithContentsOfFile:(NSString *)path;
@@ -78,7 +78,7 @@
 /// -------------
 
 /// Retrieve a subtexture by name. Returns `nil` if it is not found.
-- (SPTexture *)textureByName:(NSString *)name;
+- (id<ISPTextureAtlasTexture>)textureByName:(NSString *)name;
 
 /// Returns all textures that start with a certain string, sorted alphabetically
 /// (especially useful for `SPMovieClip`).
