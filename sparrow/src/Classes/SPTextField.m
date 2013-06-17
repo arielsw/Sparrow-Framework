@@ -339,7 +339,7 @@ static NSMutableDictionary *bitmapFonts = nil;
     if (!_textBounds) _textBounds = [[SPRectangle alloc] init];
     [_textBounds setX:xOffset y:yOffset width:textSize.width height:textSize.height];
     
-    SPTexture *texture = [[SPTexture alloc] initWithWidth:width height:height generateMipmaps:YES
+    id<ISPImageTexture> texture = [[SPTexture alloc] initWithWidth:width height:height generateMipmaps:YES
                                                      draw:^(CGContextRef context)
       {
           float red   = SP_COLOR_PART_RED(_color)   / 255.0f;

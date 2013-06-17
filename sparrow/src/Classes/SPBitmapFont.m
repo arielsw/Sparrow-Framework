@@ -132,15 +132,15 @@ SP_IMPLEMENT_MEMORY_POOL();
     return [self init];
 }
 
-- (SPTexture *)textureReferencedByXmlData:(NSData *)data
+- (id<ISPBitmapFontTexture>)textureReferencedByXmlData:(NSData *)data
 {
     NSString *folder = [[NSBundle mainBundle] resourcePath];
     return [self textureReferencedByXmlData:data inFolder:folder];
 }
 
-- (SPTexture *)textureReferencedByXmlData:(NSData *)data inFolder:(NSString *)folder
+- (id<ISPBitmapFontTexture>)textureReferencedByXmlData:(NSData *)data inFolder:(NSString *)folder
 {
-    __block SPTexture *texture = nil;
+    __block id<ISPBitmapFontTexture> texture = nil;
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
     
     [parser parseElementsWithBlock:^(NSString *elementName, NSDictionary *attributes)

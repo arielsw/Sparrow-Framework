@@ -93,7 +93,7 @@
 
 - (id)init
 {
-    SPTexture *texture = [[SPGLTexture alloc] init];
+    id<ISPButtonTexture> texture = [[SPGLTexture alloc] init];
     return [self initWithUpState:texture];   
 }
 
