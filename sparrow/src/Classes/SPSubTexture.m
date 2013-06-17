@@ -13,10 +13,11 @@
 #import "SPVertexData.h"
 #import "SPRectangle.h"
 #import "SPMacros.h"
+#import "ISPSubTextureTexture.h"
 
 @implementation SPSubTexture
 {
-    SPTexture *_baseTexture;
+    id<ISPSubTextureTexture> _baseTexture;
     SPRectangle *_clipping;
     SPRectangle *_rootClipping;
     SPRectangle *_frame;
@@ -26,12 +27,12 @@
 @synthesize clipping = _clipping;
 @synthesize frame = _frame;
 
-- (id)initWithRegion:(SPRectangle*)region ofTexture:(SPTexture*)texture
+- (id)initWithRegion:(SPRectangle*)region ofTexture:(id<ISPSubTextureTexture>)texture
 {
     return [self initWithRegion:region frame:nil ofTexture:texture];
 }
 
-- (id)initWithRegion:(SPRectangle *)region frame:(SPRectangle *)frame ofTexture:(SPTexture *)texture
+- (id)initWithRegion:(SPRectangle *)region frame:(SPRectangle *)frame ofTexture:(id<ISPSubTextureTexture>)texture
 {
     if ((self = [super init]))
     {
@@ -63,7 +64,7 @@
     // if the base texture is a sub texture as well, calculate clipping 
     // in reference to the root texture         
     _rootClipping = [_clipping copy];
-    SPTexture *baseTexture = _baseTexture;
+    id<ISPSubTextureTexture> baseTexture = _baseTexture;
     while ([baseTexture isKindOfClass:[SPSubTexture class]])
     {
         SPSubTexture *baseSubTexture = (SPSubTexture *)baseTexture;
@@ -160,7 +161,7 @@
     return _baseTexture.scale;
 }
 
-+ (id)textureWithRegion:(SPRectangle*)region ofTexture:(SPTexture*)texture
++ (id)textureWithRegion:(SPRectangle*)region ofTexture:(id<ISPSubTextureTexture>)texture
 {
     return [[self alloc] initWithRegion:region ofTexture:texture];
 }

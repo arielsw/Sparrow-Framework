@@ -22,7 +22,9 @@
 #import "ISPBitmapCharTexture.h"
 #import "ISPTextFieldTexture.h"
 #import "ISPTextureAtlasTexture.h"
+#import "ISPSubTextureTexture.h"
 
+@protocol ISPSubTextureTexture;
 @class SPRectangle;
 @class SPTexture;
 @class SPVertexData;
@@ -99,7 +101,7 @@ typedef void (^SPTextureLoadingBlock)(SPTexture *texture, NSError *outError);
  
 ------------------------------------------------------------------------------------------------- */
 
-@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture, ISPQuadTexture, ISPImageTexture, ISPMovieClipTexture, ISPButtonTexture, ISPBitmapFontTexture, ISPBitmapCharTexture, ISPTextFieldTexture, ISPTextureAtlasTexture>
+@interface SPTexture : NSObject <ISPBaseEffectTexture, ISPQuadBatchTexture, ISPQuadTexture, ISPImageTexture, ISPMovieClipTexture, ISPButtonTexture, ISPBitmapFontTexture, ISPBitmapCharTexture, ISPTextFieldTexture, ISPTextureAtlasTexture, ISPSubTextureTexture>
 
 /// ------------------
 /// @name Initializers
@@ -150,12 +152,12 @@ typedef void (^SPTextureLoadingBlock)(SPTexture *texture, NSError *outError);
 
 /// Initializes a texture with a region (in points) of another texture. The new texture will 
 /// reference the base texture; no data is duplicated.
-- (id)initWithRegion:(SPRectangle*)region ofTexture:(SPTexture*)texture;
+- (id)initWithRegion:(SPRectangle*)region ofTexture:(id<ISPSubTextureTexture>)texture;
 
 /// Initializes a texture with a region (in points) of another texture, as well as a frame rectangle
 /// that makes up for trimmed parts (see class description). The new texture will reference the base
 /// texture; no data is duplicated.
-- (id)initWithRegion:(SPRectangle*)region frame:(SPRectangle *)frame ofTexture:(SPTexture*)texture;
+- (id)initWithRegion:(SPRectangle*)region frame:(SPRectangle *)frame ofTexture:(id<ISPSubTextureTexture>)texture;
 
 /// Factory method.
 + (id)textureWithContentsOfFile:(NSString*)path;
@@ -164,7 +166,7 @@ typedef void (^SPTextureLoadingBlock)(SPTexture *texture, NSError *outError);
 + (id)textureWithContentsOfFile:(NSString*)path generateMipmaps:(BOOL)mipmaps;
 
 /// Factory method.
-+ (id)textureWithRegion:(SPRectangle *)region ofTexture:(SPTexture *)texture;
++ (id)textureWithRegion:(SPRectangle *)region ofTexture:(id<ISPSubTextureTexture>)texture;
 
 /// Factory method.
 + (id)textureWithWidth:(float)width height:(float)height draw:(SPTextureDrawingBlock)drawingBlock;

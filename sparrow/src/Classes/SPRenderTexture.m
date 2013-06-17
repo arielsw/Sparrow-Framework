@@ -15,6 +15,7 @@
 #import "SPUtils.h"
 #import "SPStage.h"
 #import "SparrowClass.h"
+#import "ISPSubTextureTexture.h"
 
 @implementation SPRenderTexture
 {
@@ -108,7 +109,7 @@
         // switch to the texture's framebuffer for rendering
         glBindFramebufferOES(GL_FRAMEBUFFER_OES, _framebuffer);
         
-        SPTexture *baseTexture = self.baseTexture;
+        id<ISPSubTextureTexture> baseTexture = self.baseTexture;
         float width  = baseTexture.width;
         float height = baseTexture.height;
         float scale  = baseTexture.scale;

@@ -19,6 +19,7 @@
 #import "SPVertexData.h"
 #import "SPStage.h"
 #import "SparrowClass.h"
+#import "ISPSubTextureTexture.h"
 
 // --- class implementation ------------------------------------------------------------------------
 
@@ -152,12 +153,12 @@
             }];
 }
 
-- (id)initWithRegion:(SPRectangle*)region ofTexture:(SPTexture*)texture
+- (id)initWithRegion:(SPRectangle*)region ofTexture:(id<ISPSubTextureTexture>)texture
 {
     return [self initWithRegion:region frame:nil ofTexture:texture];
 }
 
-- (id)initWithRegion:(SPRectangle*)region frame:(SPRectangle *)frame ofTexture:(SPTexture*)texture
+- (id)initWithRegion:(SPRectangle*)region frame:(SPRectangle *)frame ofTexture:(id<ISPSubTextureTexture>)texture
 {
     if (frame || region.x != 0.0f || region.width  != texture.width
               || region.y != 0.0f || region.height != texture.height)
@@ -180,7 +181,7 @@
     return [[self alloc] initWithContentsOfFile:path generateMipmaps:mipmaps];
 }
 
-+ (id)textureWithRegion:(SPRectangle *)region ofTexture:(SPTexture *)texture
++ (id)textureWithRegion:(SPRectangle *)region ofTexture:(id<ISPSubTextureTexture>)texture
 {
     return [[self alloc] initWithRegion:region ofTexture:texture];
 }
