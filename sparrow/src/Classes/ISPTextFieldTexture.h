@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISPBitmapFontTexture.h"
 
-@protocol ISPTextFieldTexture <NSObject>
+@protocol ISPTextFieldTexture <NSObject, ISPBitmapFontTexture>
 
 @end

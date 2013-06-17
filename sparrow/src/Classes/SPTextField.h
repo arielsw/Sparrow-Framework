@@ -13,7 +13,7 @@
 #import "SPDisplayObjectContainer.h"
 #import "SPMacros.h"
 
-@class SPTexture;
+@protocol ISPTextFieldTexture;
 @class SPQuad;
 @class SPBitmapFont;
 
@@ -139,12 +139,12 @@ typedef enum
 /// Makes a bitmap font available at any text field, using a custom texture.
 ///
 /// @return The name of the font as defined in the font XML.
-+ (NSString *)registerBitmapFontFromFile:(NSString *)path texture:(SPTexture *)texture;
++ (NSString *)registerBitmapFontFromFile:(NSString *)path texture:(id<ISPTextFieldTexture>)texture;
 
 /// Makes a bitmap font available at any text field, using a custom texture and font name.
 ///
 /// @retrurn The name of the font that was passed to the method.
-+ (NSString *)registerBitmapFontFromFile:(NSString *)path texture:(SPTexture *)texture
++ (NSString *)registerBitmapFontFromFile:(NSString *)path texture:(id<ISPTextFieldTexture>)texture
                                     name:(NSString *)fontName;
 
 /// Unregisters the bitmap font of this name.

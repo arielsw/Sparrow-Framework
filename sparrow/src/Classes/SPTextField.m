@@ -20,6 +20,7 @@
 #import "SPStage.h"
 #import "SPSprite.h"
 #import "SparrowClass.h"
+#import "ISPTextFieldTexture.h"
 
 #import <UIKit/UIKit.h>
 
@@ -253,14 +254,14 @@ static NSMutableDictionary *bitmapFonts = nil;
     return [self registerBitmapFont:font name:nil];
 }
 
-+ (NSString *)registerBitmapFontFromFile:(NSString *)path texture:(SPTexture *)texture
++ (NSString *)registerBitmapFontFromFile:(NSString *)path texture:(id<ISPTextFieldTexture>)texture
                                     name:(NSString *)fontName
 {
     SPBitmapFont *font = [[SPBitmapFont alloc] initWithContentsOfFile:path texture:texture];
     return [self registerBitmapFont:font name:fontName];
 }
 
-+ (NSString *)registerBitmapFontFromFile:(NSString *)path texture:(SPTexture *)texture
++ (NSString *)registerBitmapFontFromFile:(NSString *)path texture:(id<ISPTextFieldTexture>)texture
 {
     SPBitmapFont *font = [[SPBitmapFont alloc] initWithContentsOfFile:path texture:texture];
     return [self registerBitmapFont:font];
