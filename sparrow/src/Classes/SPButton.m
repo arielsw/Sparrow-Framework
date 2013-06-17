@@ -11,7 +11,6 @@
 
 #import "SPButton.h"
 #import "SPTouchEvent.h"
-#import "SPTexture.h"
 #import "SPGLTexture.h"
 #import "SPImage.h"
 #import "SPStage.h"

@@ -13,7 +13,7 @@
 #import "SPBitmapChar.h"
 #import "SPTextField.h"
 #import "SPMacros.h"
-#import "SPTexture.h"
+#import "TSPTextureSmoothing.h"
 
 @protocol ISPBitmapFontTexture;
 @class SPSprite;

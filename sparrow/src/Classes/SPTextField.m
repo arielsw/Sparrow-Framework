@@ -11,7 +11,6 @@
 
 #import "SPTextField.h"
 #import "SPImage.h"
-#import "SPTexture.h"
 #import "SPSubTexture.h"
 #import "SPGLTexture.h"
 #import "SPEnterFrameEvent.h"

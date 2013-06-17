@@ -13,10 +13,10 @@
 #import "SPDisplayObject.h"
 #import "SPVertexData.h"
 #import "SPQuadBatch.h"
-#import "SPTexture.h"
 #import "SPMacros.h"
 #import "SPQuad.h"
 #import "SPBlendMode.h"
+#import "ISPQuadTexture.h"
 
 #import <GLKit/GLKit.h>
 

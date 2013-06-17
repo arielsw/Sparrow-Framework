@@ -10,7 +10,6 @@
 //
 
 #import "SPBitmapChar.h"
-#import "SPTexture.h"
 #import "ISPBitmapCharTexture.h"
 
 @implementation SPBitmapChar

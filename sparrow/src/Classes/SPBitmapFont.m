@@ -11,7 +11,6 @@
 
 #import "SPBitmapFont.h"
 #import "SPBitmapChar.h"
-#import "SPTexture.h"
 #import "SPRectangle.h"
 #import "SPSubTexture.h"
 #import "SPDisplayObject.h"

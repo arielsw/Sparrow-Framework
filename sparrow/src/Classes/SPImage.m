@@ -11,7 +11,6 @@
 
 #import "SPImage.h"
 #import "SPPoint.h"
-#import "SPTexture.h"
 #import "SPGLTexture.h"
 #import "SPRenderSupport.h"
 #import "SPMacros.h"

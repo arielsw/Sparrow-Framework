@@ -11,7 +11,6 @@
 
 #import <Foundation/Foundation.h>
 #import "SPSprite.h"
-#import "SPTexture.h"
 #import "SPAnimatable.h"
 #import "SPImage.h"
 #import "SPSoundChannel.h"

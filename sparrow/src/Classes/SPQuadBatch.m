@@ -10,13 +10,14 @@
 //
 
 #import "SPQuadBatch.h"
-#import "SPTexture.h"
 #import "SPImage.h"
 #import "SPRenderSupport.h"
 #import "SPBaseEffect.h"
 #import "SPDisplayObjectContainer.h"
 #import "SPMacros.h"
 #import "SPBlendMode.h"
+#import "ISPQuadBatchTexture.h"
+#import "ISPQuadTexture.h"
 
 #import <GLKit/GLKit.h>
 
