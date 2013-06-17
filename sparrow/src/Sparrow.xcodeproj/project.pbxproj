@@ -183,6 +183,7 @@
 		B027CB581759C34800A45E50 /* ISPButtonTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPButtonTexture.h; sourceTree = "<group>"; };
 		B04835E3176F7F1E00DC9DA6 /* ISPTextFieldTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPTextFieldTexture.h; sourceTree = "<group>"; };
 		B04835E4176F821F00DC9DA6 /* ISPTextureAtlasTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPTextureAtlasTexture.h; sourceTree = "<group>"; };
+		B04835E5176F83F500DC9DA6 /* ISPSubTextureTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPSubTextureTexture.h; sourceTree = "<group>"; };
 		B064B072176F783A004F8DF7 /* ISPBitmapCharTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPBitmapCharTexture.h; sourceTree = "<group>"; };
 		B0C176E6176BDA7B00EF456E /* ISPBitmapFontTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPBitmapFontTexture.h; sourceTree = "<group>"; };
 		B0CC375A17599B66007235FE /* ISPBaseEffectTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISPBaseEffectTexture.h; sourceTree = "<group>"; };
@@ -666,6 +667,7 @@
 				DECF84320FF649D50026A4ED /* SPGLTexture.m */,
 				DECF84B90FF681BA0026A4ED /* SPSubTexture.h */,
 				DECF84BA0FF681BA0026A4ED /* SPSubTexture.m */,
+				B04835E5176F83F500DC9DA6 /* ISPSubTextureTexture.h */,
 				DE13D18912AADBF6000C77E6 /* SPRenderTexture.h */,
 				DE13D18A12AADBF6000C77E6 /* SPRenderTexture.m */,
 				DECF84260FF619150026A4ED /* SPTextureAtlas.h */,
