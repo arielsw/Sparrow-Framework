@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISPSubTextureTexture.h"
 
-@protocol ISPTextureAtlasTexture <NSObject>
+@protocol ISPTextureAtlasTexture <NSObject, ISPSubTextureTexture>
 
 @property (nonatomic, readonly) float scale;
 
