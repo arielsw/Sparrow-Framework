@@ -18,8 +18,6 @@
 #import "SPQuad.h"
 #import "SPBlendMode.h"
 
-#import <GLKit/GLKit.h>
-
 // --- helper macros -------------------------------------------------------------------------------
 
 #define CURRENT_STATE()  ((SPRenderState *)(_stateStack[_stateStackIndex]))

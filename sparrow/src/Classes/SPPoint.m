@@ -12,6 +12,7 @@
 #import "SPPoint.h"
 #import "SPMacros.h"
 #import <math.h>
+#import <GLKit/GLKMath.h>
 
 // --- class implementation ------------------------------------------------------------------------
 

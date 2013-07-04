@@ -10,7 +10,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GLKit/GLKit.h>
+#import <GLKit/GLKMathTypes.h>
 
 #import "SPPoolObject.h"
 

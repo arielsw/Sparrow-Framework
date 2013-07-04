@@ -11,7 +11,7 @@
 
 #import "SPProgram.h"
 
-#import <GLKit/GLKit.h>
+#import <OpenGLES/ES2/gl.h>
 
 @implementation SPProgram
 {

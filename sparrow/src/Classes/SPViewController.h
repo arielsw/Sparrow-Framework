@@ -9,8 +9,8 @@
 //  it under the terms of the Simplified BSD License.
 //
 
-#import <UIKit/UIKit.h>
-#import <GLKit/GLKit.h>
+#import <GLKit/GLKViewController.h>
+#import <GLKit/GLKTextureLoader.h>
 
 @class SPStage;
 @class SPJuggler;

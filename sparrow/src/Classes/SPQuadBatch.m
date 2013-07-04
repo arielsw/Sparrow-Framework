@@ -18,8 +18,6 @@
 #import "SPMacros.h"
 #import "SPBlendMode.h"
 
-#import <GLKit/GLKit.h>
-
 @implementation SPQuadBatch
 {
     int _numQuads;

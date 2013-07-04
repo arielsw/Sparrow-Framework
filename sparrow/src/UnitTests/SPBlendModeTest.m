@@ -7,7 +7,6 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import <GLKit/GLKit.h>
 
 #import "SPBlendMode.h"
 

@@ -14,6 +14,7 @@
 #import "SPRectangle.h"
 #import "SPPoint.h"
 #import "SPMacros.h"
+#import <GLKit/GLKMath.h>
 
 #define MIN_ALPHA (5.0f / 255.0f)
 

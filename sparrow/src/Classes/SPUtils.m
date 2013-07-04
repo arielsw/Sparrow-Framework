@@ -13,7 +13,6 @@
 #import "SPNSExtensions.h"
 #import "SparrowClass.h"
 
-#import <GLKit/GLKit.h>
 #import <sys/stat.h>
 
 @implementation SPUtils

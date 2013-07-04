@@ -12,6 +12,7 @@
 #import "SPMatrix.h"
 #import "SPPoint.h"
 #import "SPMacros.h"
+#import <GLKit/GLKMath.h>
 
 @implementation SPMatrix
 {

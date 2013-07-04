@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
-#import <GLKit/GLKit.h>
+#import <GLKit/GLKMathTypes.h>
 
 @class SPRectangle;
 @class SPMatrix;

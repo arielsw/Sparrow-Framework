@@ -10,7 +10,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GLKit/GLKit.h>
+#import <GLKit/GLKTextureLoader.h>
 
 #import "SPTexture.h"
 #import "SPMacros.h"
