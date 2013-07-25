@@ -60,9 +60,6 @@
         
         for (SPTouch *existingTouch in _currentTouches)
         {
-            if (existingTouch.phase == SPTouchPhaseEnded || existingTouch.phase == SPTouchPhaseCancelled)
-                continue;
-            
             if (existingTouch.nativeTouch == touch.nativeTouch)
             {
                 // existing touch; update values
@@ -90,6 +87,7 @@
         {
             // new touch!
             currentTouch = [SPTouch touch];
+            currentTouch.nativeTouch = touch.nativeTouch;
             currentTouch.timestamp = touch.timestamp;
             currentTouch.globalX = touch.globalX;
             currentTouch.globalY = touch.globalY;
